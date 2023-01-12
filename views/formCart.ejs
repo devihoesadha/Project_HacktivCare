@@ -12,7 +12,7 @@
 
 <body>
   <center>
-    <h1>Cart</h1>
+    <h1>Cart List</h1>
           <div class="container-fluid gap-5 d-flex flex-wrap mt-4">
             <% dataCart.forEach(el=> { %>
               <div class="mb-3">
@@ -23,7 +23,7 @@
                       <%= el.Product.name %>
                     </h4>
                     <p class="card-text">
-                      <%= el.Product.price %>
+                      <%= formatRupiah(el.Product.price)%>
                     </p>
                   </div>
                 </div>

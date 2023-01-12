@@ -72,7 +72,7 @@ class userController {
                     let checkPswd = checkPassword(password, data.password)
                     if (checkPswd) {
                         req.session.UserId = data.id
-                        res.redirect("/user")
+                        res.redirect("/products")
                     } else {
                         res.redirect('/user/login?error=passwordsalah')
                     }
@@ -80,6 +80,7 @@ class userController {
                     res.redirect("/user/login?error=emailsalah")
                 }
             }).catch((err) => {
+                console.log(err,"Post login");
                 res.send(err)
             });
     }

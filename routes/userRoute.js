@@ -5,7 +5,7 @@ const middleWare = require('../middleWares/middleWare')
 
 const route = express.Router()
 
-route.get("/", middleWare,userController.listUsers)//menampilkan user list KHUSUS role Admin 
+route.get("/", middleWare, userController.listUsers)//menampilkan user list KHUSUS role Admin 
 route.get("/register", userController.formRegister)//register form untuk user baru
 route.post("/register", userController.addUser)//add registered user 
 route.get("/login", userController.formLogin )//login form untuk user 

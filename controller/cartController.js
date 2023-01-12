@@ -1,27 +1,47 @@
 const cart = require('../models/cart')
-const { Cart, Profile } = require('../models/index')
+const { Cart, Profile, Product } = require('../models/index')
+const formatRupiah = require("../helper/formatRupiah")
 
 class cartController {
     static addToCart(req, res) {
-        let productId = req.params.id
-        let profileId = req.session.id
-        Cart.create({ ProfileId: profileId, ProductId: productId })
-            .then(() => {
-                res.redirect('/products')
+        let UserId = req.session.UserId
+        let id = req.params.id
+
+        Profile.findOne({
+            where: {
+                UserId: UserId
+            }
+        })
+            .then((dataProfile) => dataProfile)
+            .then((dataProfile) => {
+                Cart.create({ ProfileId: dataProfile.id, ProductId: id })
+                return res.redirect('/products')
             })
             .catch((err) => {
-                console.log(err)
+                console.log(err);
                 res.send(err)
-            })
+            });
     }
 
     static cartForm(req, res) {
-        let profileId = req.session.id
-        Cart.findAll({ where: { ProfileId: profileId } })
+        let userId = req.session.UserId
+
+        Cart.findAll({
+            include: [{
+                model: Profile, where: {
+                    UserId: userId
+                }
+            },
+            {
+                model: Product
+            }],
+        })
             .then((dataCart) => {
-                res.render('formCart.ejs', { dataCart })
+                // res.send(dataCart)
+                res.render('formCart.ejs', { dataCart, formatRupiah})
             })
             .catch((err) => {
+                console.log(err);
                 res.send(err)
             })
     }
