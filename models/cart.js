@@ -18,11 +18,15 @@ module.exports = (sequelize, DataTypes) => {
   Cart.init({
     ProfileId: DataTypes.INTEGER,
     ProductId: DataTypes.INTEGER,
-    quantity: DataTypes.INTEGER,
-    totalPrice: DataTypes.INTEGER
+    quantity: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Cart',
   });
+
+  Cart.addHook('beforeCreate',(cart,options)=>{
+    cart.quantity = 1;
+  })
+  
   return Cart;
 };

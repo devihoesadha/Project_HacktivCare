@@ -18,7 +18,7 @@ class cartController {
                 return res.redirect('/products')
             })
             .catch((err) => {
-                console.log(err);
+                // console.log(err);
                 res.send(err)
             });
     }
@@ -38,7 +38,14 @@ class cartController {
         })
             .then((dataCart) => {
                 // res.send(dataCart)
-                res.render('formCart.ejs', { dataCart, formatRupiah})
+                let totalPrice
+                // console.log(dataCart)
+                totalPrice = dataCart.map(perData => {
+                    return perData.Product.price
+                });
+                const sumPrice = totalPrice.reduce((partialSum, a) => partialSum + a, 0);
+                // console.log(sumPrice)
+                res.render('formCart.ejs', { dataCart, formatRupiah, sumPrice })
             })
             .catch((err) => {
                 console.log(err);
@@ -48,9 +55,10 @@ class cartController {
 
     static deleteCart(req, res) {
         let id = req.params.id
-        Cart.destroy({ where: { id: id } })
+        console.log(id)
+        Cart.destroy({ where: { ProductId: id } })
             .then(() => {
-                res.redirect('/products/cart')
+                res.redirect('/cart')
             })
             .catch((err) => {
                 res.send(err)

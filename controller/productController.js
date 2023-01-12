@@ -45,7 +45,8 @@ class ProductController {
     }
 
     static addProductForm(req, res) {
-        res.render("addProduct")
+        const errors = req.query.errors
+        res.render("addProduct", { errors })
     }
 
     static addProductHandler(req, res) {
@@ -54,8 +55,14 @@ class ProductController {
             .then(() => {
                 res.redirect("/products")
             }).catch((err) => {
-                console.log(err);
-                res.send(err)
+                if (err.errors) {
+                    console.log(err)
+                    let notif = err.errors.map((perData) => { return perData.message })
+                    res.redirect(`/products/add?errors=${notif.join(";")}`)
+                } else {
+                    res.send(err)
+                }
+
             });
     }
 
