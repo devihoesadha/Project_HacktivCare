@@ -5,24 +5,12 @@ class ProductController {
     static findAllProduct(req, res) {
         let searchProduct = req.query.search
 
-        let option = {
-            where: {},
-            order: [
-                ["createdAt", "DESC"]
-            ]
-        }
-        if (searchProduct) {
-            option.where.name = {
-                    [Op.iLike]: `%${searchProduct}%`
-            }
-        }
-
-        Product.findAll(option)
+        Product.searchProductByTitle(searchProduct)
             .then((dataProduct) => {
                 // res.send(dataProduct)
                 res.render("product", { dataProduct })
             }).catch((err) => {
-                console.log(err);
+                // console.log(err);
                 res.send(err)
             });
     }

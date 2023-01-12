@@ -1,5 +1,5 @@
 'use strict';
-const {
+const { Op,
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
@@ -12,6 +12,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Product.hasMany(models.Cart)
+    }
+
+    static searchProductByTitle(searchProduct) {
+      let option = {
+        where: {},
+        order: [
+          ["createdAt", "DESC"]
+        ]
+      }
+      if (searchProduct) {
+        option.where.name = {
+          [Op.iLike]: `%${searchProduct}%`
+        }
+      }
+      return Product.findAll(option)
     }
   }
   Product.init({

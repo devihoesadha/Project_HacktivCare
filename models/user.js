@@ -1,7 +1,10 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
+const { hashPassword } = require('../helper/bcrypt');
+const { options } = require('../routes/userRoute');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -10,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
 
-    
+  
     static associate(models) {
       // define association here
       User.hasOne(models.Profile)
@@ -27,9 +30,6 @@ module.exports = (sequelize, DataTypes) => {
         notNull: {
           msg: `Username cannot be Empty`
         },
-        // unique: {
-        //   msg: `Username must be unique`
-        // },
         notEmpty: {
           msg: `Username cannot be Empty`
         }
@@ -80,5 +80,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+  
+  User.addHook('beforeCreate',(user,options)=>{
+    user.password = hashPassword(user.password)
+  })
   return User;
 };
