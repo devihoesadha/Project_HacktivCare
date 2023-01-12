@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static searchProductByTitle(searchProduct) {
+
       let option = {
         where: {},
         order: [
