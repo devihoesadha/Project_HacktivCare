@@ -1,4 +1,6 @@
 const express = require('express')
+
+const Controller = require('../controller/index')
 const route = express.Router()
 
 const routeUser = require('./userRoute')

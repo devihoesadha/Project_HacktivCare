@@ -9,9 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
-        type: Sequelize.STRING
-      },
       firstName: {
         type: Sequelize.STRING
       },
@@ -20,12 +17,6 @@ module.exports = {
       },
       dateOfBirth: {
         type: Sequelize.DATE
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      role: {
-        type: Sequelize.STRING
       },
       UserId: {
         type: Sequelize.INTEGER,

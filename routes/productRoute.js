@@ -1,5 +1,6 @@
 const express = require('express')
 const Controller = require("../controller/productController")
+
 const route = express.Router()
 
 route.get("/", Controller.findAllProduct) // menampilkan semua product (home/product)
