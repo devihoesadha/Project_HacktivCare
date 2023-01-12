@@ -1,6 +1,6 @@
 const QRCode = require('qrcode')
 
-const generateQrCode = (value) => QRCode.toString(value, (err, url) => {
+const generateQrCode = (value) => QRCode.toDataURL(value, (err, url) => {
     if (err) {
         console.log("error pada Qr Code");
     } else if (url) {
