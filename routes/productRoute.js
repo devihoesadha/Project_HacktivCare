@@ -10,4 +10,6 @@ route.get("/:id") //show product by id
 route.get("/edit/:id") // edit product
 route.get("delete/:id") //delete product
 
+
+
 module.exports = route
