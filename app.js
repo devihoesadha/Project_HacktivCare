@@ -13,6 +13,3 @@ app.use('/', route)
 app.listen(PORT, () => {
     console.log(`Running at localhost:3000`)
 })
-
-// var salt = bcrypt.genSaltSync(10);
-// var hash = bcrypt.hashSync("B4c0/\/", salt);
