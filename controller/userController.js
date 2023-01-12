@@ -56,7 +56,14 @@ class userController {
     }
 
     static loginUser(req, res) {
-        console.log(req.body)
+        const { email, password } = req.body
+
+        User.findOne({ where: { email } })
+            .then((dataUser) => {
+                if(dataUser){
+                    const isValidPassword = 
+                }
+            })
     }
 
     static formEditProfile(req, res) {
@@ -73,12 +80,12 @@ class userController {
         let id = req.params.id
         const { firstName, lastName, dateOfBirth } = req.body
         Profile.update({ firstName, lastName, dateOfBirth }, { where: { id: id } })
-        .then((data)=>{
-            res.redirect("/products")
-        })
-        .catch((err)=>{
-            res.send(err)
-        })
+            .then((data) => {
+                res.redirect("/products")
+            })
+            .catch((err) => {
+                res.send(err)
+            })
     }
 }
 
