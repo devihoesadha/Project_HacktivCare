@@ -15,7 +15,7 @@ class userController {
     }
 
     static profileUsers(req, res) {
-        Profile.findAll()
+        Profile.findAll({ include: User })
             .then((dataProfile) => {
                 res.render('profileUsers.ejs', { dataProfile })
             })
@@ -42,12 +42,43 @@ class userController {
             })
             .catch((err) => {
                 if (err.errors) {
+                    console.log(err)
                     let notif = err.errors.map((perData) => { return perData.message })
                     res.redirect(`/user/register?errors=${notif.join(";")}`)
                 } else {
                     res.send(err)
                 }
             })
+    }
+
+    static formLogin(req, res) {
+        res.render("formLogin.ejs")
+    }
+
+    static loginUser(req, res) {
+        console.log(req.body)
+    }
+
+    static formEditProfile(req, res) {
+        let id = req.params.id
+        Profile.findOne({ where: { id: id } })
+            .then((data) => {
+                res.render('formEditProfile.ejs', { data })
+            }).catch((err) => {
+                res.send(err)
+            })
+    }
+
+    static editProfile(req, res) {
+        let id = req.params.id
+        const { firstName, lastName, dateOfBirth } = req.body
+        Profile.update({ firstName, lastName, dateOfBirth }, { where: { id: id } })
+        .then((data)=>{
+            res.redirect("/products")
+        })
+        .catch((err)=>{
+            res.send(err)
+        })
     }
 }
 

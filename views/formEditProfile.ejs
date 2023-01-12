@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>edit your profile</h1>
+        <form action="/user/profile/:id/edit" method="post">
+            <br>First Name:
+            <br><input type="text" name="firstName" value="<%= data.firstName %>">
+            <br>Last Name:
+            <br><input type="text" name="lastName" value="<%= data.lastName %>">
+            <br>Date Of Birth:
+            <br><input type="date" name="dateOfBirth" value="<%= data.toISOString() %>">
+           
+            <br><br><input type="submit" value="submit">
+            <a href="/products"><button type="button">cancel</button></a>
+        </form>
+    </center>
+</body>
+</html>
