@@ -1,0 +1,72 @@
+[
+    {
+        "name" : "SKINTIFIC 5X Ceramide Gel",
+        "description" : "Diformulasikan menggunakan teknologi 5X Ceramides yang meniru struktur skin barrier kita, moisturizer ini menggunakan 5 tipe Ceramide yang memiliki fungsi berbeda untuk menjaga kesehatan kulit (Ceramide NP, Ceramide AP, Ceramide NS, Ceramide AS, Ceramide EOP). Kandungan Ceramides dapat memperbaiki skin barrier, melembabkan kulit serta menenangkan sel kulit yang rusak.",
+        "price" : 44900,
+        "stock" : 30,
+        "imageURL" : "https://image.femaledaily.com/dyn/640/images/prod-pics/product_1661744063_f76585b9_5_800x800.png"
+    },
+    {
+        "name" : "SK-II Facial Treatment Clear Lotion",
+        "description" : "Facial Treatment Clear Lotion wajah dengan tekstur ringan yang berfungsi menstabilkan keadaan kulit wajah seperti toner, namun tanpa penggunaan alkohol.",
+        "price" : 700869,
+        "stock" : 30,
+        "imageURL" : "https://ingredio.id/wp-content/uploads/2022/07/SK-II-Facial-Treatment-Clear-Lotion.jpg"
+    },
+    {
+        "name" : "WESTCARE Soothing Toner",
+        "description" : "Westcare Soothing Toner diformulasikan dengan bahan baku terbaik untuk membantu menjaga kulit tetap kencang, segar tenang, dan terlindungi. Kandungan Phragmites & Poria Cocos Extract berfungsi menenangkan & melindungi kulit dari faktor stress eksternal. Anona Cherimola Fruit Extract berfungsi mengurangi kemerahan dan gatal pada kulit. Centella Asiatica Extract berfungsi menenangkan dan meningkatkan produksi kolagen",
+        "price" : 121500,
+        "stock" : 50,
+        "imageURL" : "https://images.soco.id/3e8f3e97-f96a-42a8-8dfc-1be98d7738e6-.jpg"
+    },
+    {
+        "name" : "WHITELAB Whitelab Soothing Toner",
+        "description" : "Whitelab Soothing Toner merupakan Lightweight Toner yang di formulasikan secara unique untuk mendukung perawatan kulit anda. Dengan kandungan natural ingredients dan Alcohol-free, Whitelab Soothing Toner sangat gentle untuk digunakan setiap hari.",
+        "price" :  63450,
+        "stock" : 50,
+        "imageURL" : "https://images.soco.id/a0ff28fa-bbed-4f89-b001-9b12f4e44d82-image-0-1623055014832"
+    },
+    {
+        "name" : "LACOCO Aloe Vera Soothing Mist",
+        "description" : "Berbagai manfaat dalam satu produk. Dapat digunakan sebagai pembersih, toner, penyegar dan eksfoliator. Kandungan AHA&BHA akan membersihkan kulit dan mengangkat sel kulit mati sehingga kulit menjadi lebih cerah dan lembut. Mengandung lidah buaya untuk menjaga kelembaban kulit, serta sebagai agen anti inflamasi untuk menenangkan kulit. Dilengkapi dengan ekstrak bunga camelia dan magnolia untuk memberi sensasi segar pada kulit dan membantu mencegah tanda penuaan serta membantu merawat jerawat.",
+        "price" : 255500,
+        "stock" : 76,
+        "imageURL" : "https://image.femaledaily.com/dyn/500/images/prod-pics/product_1630644615_Rekomendas_800x800.jpeg"
+    },
+    {
+        "name" : "SOME BY MI AHA-BHA-PHA Gel",
+        "description" : "Gel dengan kandungan 92% Cica yang memiliki tekstur ringan sehingga terasa nyaman di kulit dengan memberikan kelembapan yang ringan dan menyejukkan. Dilengkapi dengan fungsi ganda, yaitu mencerahkan dan menyamarkan kerutan pada kulit. Gel ini dapat digunakan pada seluruh area wajah dan tubuh.",
+        "price" : 354000,
+        "stock" : 44,
+        "imageURL" : ""
+    },
+    {
+        "name" : "SECRET KEY Secret Treatment Essence ",
+        "description" : "Secret Key Starting Treatment Essence Rose mengandung 94% Galactomyces, salah satu fermentasi filtrate ragi yang memiliki khasiat baik untuk kulit. Galactomyces memiliki lebih dari 50% protein dan kandungan vitamin B1, B2, Niacin dan asam folat. Jadi tidak hanya kandungan ini akan memberikan nutrisi yang diperlukan kulit tapi juga akan memberikan efek melembapkan, menghaluskan tekstur wajah, mencerahkan, menyegarkan wajah, mengurangin minya berlebih. Hadir dengan limited edition dengan kemasan Tutup Botol Rose Gold dan Botol Print Rose.",
+        "price" : 364000,
+        "stock" : 52,
+        "imageURL" : "https://images.soco.id/d6a547db-16bf-4fb0-9dae-53a2bd4d5e36-28538558411-1621581229358.png"
+    },
+    {
+        "name" : "BONAVIE Gentle Shower Scrub",
+        "description" : "Bonavie Gentle Shower Scrub dengan kandungan micro scrub lembut, membantu mengangkat sel-sel kulit mati , membersihkan kulit dari kotoran, merawat kelembapan sehingga kulit tampak lebih cerah dan halus. Rasakan sensasi menyenangkan saat mandi dengan keharuman lembut Bonavie! Aroma Bonavie Gentle Shower Scrub Crème Canele memiliki karakter yang cheerful, indulging dan sensual modern. Paduan.",
+        "price" : 83900,
+        "stock" : 100,
+        "imageURL" : "https://images.soco.id/7c5cb7fc-acc5-4e10-a661-c68227fc3431-.jpg"
+    },
+    {
+        "name" : "EssenceAge Corrector Essence",
+        "description" : "Essence bertekstur ringan dan mudah menerap yang menkombinasikan Galactomyces Ferment Filtrate dan Prebiotic untuk menutrisi, menghidrasi dan menyeimbangkan flora normal di kulit untuk mendukung proses regenerasi sehingga kulit lebih sehat, cerah dan tampak lebih muda",
+        "price" : 202950,
+        "stock" : 33,
+        "imageURL" : "https://images.soco.id/0117ace9-70fd-4162-ba9c-7af347b309d9-.jpg"
+    },
+    {
+        "name" : "SUKIN Natural Deodorant Fresh Cotton",
+        "description" : "Deodorant alami (non antiperspirant) Untuk semua jenis kulit Dengan aroma yang segar, bersih dan lembut dari cotton, lily, jasmine, cedarwood. Tersedia juga dalam aroma: Signature, Ocean Mist.",
+        "price" : 94905,
+        "stock" : 10,
+        "imageURL" : "https://images.soco.id/8b9acd2a-049a-4cfc-bc81-2f08f43a6085-54794052378-1613472057132.png"
+    }
+]
