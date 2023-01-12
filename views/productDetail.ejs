@@ -35,7 +35,7 @@
                     <labe class="form-label"><%= detail.stock %> </label>
                 </div>
 
-                <a href="#"><button type="submit" class="btn btn-primary">Add to Cart</button></a>
+                <a href="/cart/add/<%=detail.id%>"><button type="submit" class="btn btn-primary">Add to Cart</button></a>
                 <a href="/products/detail/<%= detail.id %>/edit"><button type="submit" class="btn btn-light">Edit</button></a>
                 <a href="/products/delete/<%= detail.id %>"><button> Delete</button></a>
         </div>
