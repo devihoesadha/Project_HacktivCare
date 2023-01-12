@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       Profile.belongsTo(models.User, { foreignKey: "UserId" })
       Profile.hasMany(models.Cart)
     }
+    
+    get age() {
+      return new Date().getFullYear() - this.dateOfBirth.getFullYear()
+    }
   }
   Profile.init({
     userName: {

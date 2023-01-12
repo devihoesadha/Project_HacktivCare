@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Users List</h1>
+        <table border="3">
+            <tr>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <% dataUser.forEach(perData => { %>
+                <tr>
+                    <td><%= perData.id %> </td>
+                    <td><%= perData.Profile.userName %></td>
+                    <td><%= perData.Profile.email %></td>
+                    <td><a href="/user/profile/<%= perData.id %>"><button>User Details</button></a></td>
+                </tr>
+                <% }) %>
+        </table>
+    </center>
+</body>
+</html>

@@ -1,14 +1,15 @@
 const express = require('express')
-const Controller = require('../controllers/controller')
+const userController = require('../controller/userController')
 
 const route = express.Router()
 
-route.get("/")//menampilkan user list KHUSUS role Admin 
+route.get("/", userController.listUsers)//menampilkan user list KHUSUS role Admin 
 route.get("/register", )//register form untuk user baru
 route.post("/register", )//add registered user 
-route.get("/login", )//login form untuk user baru
-route.post("/login", )//logined user redirect ke product list 
-route.get("/profile/:id",/*COntroller */ )//menampilkan user/profile profile user
+route.get("/login", )//login form untuk user 
+route.post("/login", )//login user redirect ke product list
+route.get("/logout", )//logout user
+route.get("/profile/:id", userController.profileUsers)//menampilkan user/profile profile user
 
 
 route.get
