@@ -19,8 +19,8 @@
             <% dataUser.forEach(perData => { %>
                 <tr>
                     <td><%= perData.id %> </td>
-                    <td><%= perData.Profile.userName %></td>
-                    <td><%= perData.Profile.email %></td>
+                    <td><%= perData.userName %></td>
+                    <td><%= perData.email %></td>
                     <td><a href="/user/profile/<%= perData.id %>"><button>User Details</button></a></td>
                 </tr>
                 <% }) %>

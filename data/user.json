@@ -1,23 +1,33 @@
 [
     {
+        "userName" : "deviFbrta",
         "email" : "depifebrita@gmail.com",
-        "password" : "abcdefgh"
+        "password" : "abcdefgh",
+        "role" : "Seller"
     },
     {
+        "userName" : "dimasRmdh",
         "email" : "dimasnugroho@gmail.com",
-        "password" : "abcdefgh"
+        "password" : "abcdefgh",
+        "role" : "Admin"
     },
     {
+        "userName" : "aditNuryana",
         "email" : "aditnuryana@gmail.com",
-        "password" : "abcdefgh"
+        "password" : "abcdefgh",
+        "role" : "Customer"
     },
     
     {
+        "userName" : "safrizalAji",
         "email" : "safrizalaji@gmail.com",
-        "password" : "abcdefgh"
+        "password" : "abcdefgh",
+        "role" : "Admin"
     },
     {
+        "userName" : "sonyFriady",
         "email" : "sonifriady@gmail.com",
-        "password" : "abcdefgh"
+        "password" : "abcdefgh",
+        "role" : "Customer"
     }
 ]

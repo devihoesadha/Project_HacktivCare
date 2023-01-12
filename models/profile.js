@@ -14,77 +14,22 @@ module.exports = (sequelize, DataTypes) => {
       Profile.belongsTo(models.User, { foreignKey: "UserId" })
       Profile.hasMany(models.Cart)
     }
-    
+
     get age() {
       return new Date().getFullYear() - this.dateOfBirth.getFullYear()
     }
   }
   Profile.init({
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: `userName cannot be Empty`
-        },
-        notEmpty: {
-          msg: `userName cannot be Empty`
-        }
-      }
-    },
-    firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: `firstName cannot be Empty`
-        },
-        notEmpty: {
-          msg: `firstName cannot be Empty`
-        }
-      }
-    },
+    firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    dateOfBirth: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: `birthday cannot be Empty`
-        },
-        notEmpty: {
-          msg: `birthday cannot be Empty`
-        }
-      }
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: `email cannot be Empty`
-        },
-        notEmpty: {
-          msg: `email cannot be Empty`
-        }
-      }
-    },
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: `role cannot be Empty`
-        },
-        notEmpty: {
-          msg: `role cannot be Empty`
-        }
-      }
-    },
+    dateOfBirth: DataTypes.DATE,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Profile',
   });
+  // Profile.addHook("beforeCreate", (profile, options) => {
+  //   profile.role = "customer"
+  // })
   return Profile;
 };
