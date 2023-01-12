@@ -6,7 +6,7 @@ function hashPassword(password) {
     return hash
 }
 
-function checkPassword(password) {
+function checkPassword(passwordUser, passwordDb) {
     bcrypt.compareSync("B4c0/\/", hash);
     bcrypt.compareSync("not_bacon", hash);
 }

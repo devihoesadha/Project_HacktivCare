@@ -1,5 +1,5 @@
 const express = require('express')
-const Controller = require('../controllers/controller')
+// const Controller = require('../controller/controller')
 
 const route = express.Router()
 
@@ -9,5 +9,7 @@ route.post("/add") // post product yg baru ditambah dan di redirect ke (home/pro
 route.get("/:id") //show product by id
 route.get("/edit/:id") // edit product
 route.get("delete/:id") //delete product
+
+
 
 module.exports = route
