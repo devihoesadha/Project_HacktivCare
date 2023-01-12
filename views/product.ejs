@@ -32,7 +32,7 @@
                       <%= el.name %>
                     </h4>
                     <p class="card-text">
-                      <%= el.price %>
+                      <%=formatRupiah(el.price)%>
                     </p>
                     <a href="/products/detail/<%= el.id %>"><button> Show Details</button></a>
                     <a href="#"><button> Add to Cart </button></a>
