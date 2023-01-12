@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       Profile.hasMany(models.Cart)
     }
 
+    toISOString() {
+      // console.log(this.date)
+      return new Date(this.dateOfBirth).toISOString().split('T')[0];
+    }
+    
     get age() {
       return new Date().getFullYear() - this.dateOfBirth.getFullYear()
     }
