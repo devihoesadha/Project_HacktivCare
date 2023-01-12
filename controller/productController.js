@@ -18,6 +18,7 @@ class ProductController {
         const id = req.params.id
         Product.findByPk(id)
             .then((detail) => {
+                // console.log(detail, ">>>");
                 res.render("productDetail", { detail })
             }).catch((err) => {
                 console.log(err);
@@ -71,16 +72,18 @@ class ProductController {
 
     static deleteProduct(req, res) {
         const id = req.params.id
-        Product.destroy({ where: id })
+        Product.destroy({
+            where:{
+                id
+            }
+        })
             .then(() => {
-                res.redirect(`/products/detail/${id}`)
+                res.redirect("/products")
             }).catch((err) => {
                 console.log(err);
                 res.send(err)
             });
     }
-
-
 }
 
 module.exports = ProductController
