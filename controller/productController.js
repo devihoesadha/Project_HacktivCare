@@ -1,6 +1,7 @@
 const { Op } = require("sequelize")
 const { Product, User, Profile } = require("../models/index")
 const formatRupiah = require("../helper/formatRupiah")
+const QRCode = require('qrcode')
 
 class ProductController {
 
@@ -13,10 +14,10 @@ class ProductController {
             .then((dataProduct) => {
                 if (userId) {
                     User.findOne({ include: Profile, where: { id: userId } }).then((user) => {
-                        return res.render("product", { dataProduct, user , formatRupiah})
+                        return res.render("product", { dataProduct, user, formatRupiah })
                     })
                 } else {
-                    return res.render("product", { dataProduct, user: {} , formatRupiah})
+                    return res.render("product", { dataProduct, user: {}, formatRupiah })
                 }
             })
             .catch((err) => {
@@ -24,12 +25,19 @@ class ProductController {
             });
     }
 
+
     static productDetail(req, res) {
         const id = req.params.id
+
         Product.findByPk(id)
             .then((detail) => {
-                // console.log(detail, ">>>");
-                res.render("productDetail", { detail , formatRupiah})
+                // console.log(detail.imageURL, ">>>");
+                QRCode.toDataURL(detail.imageURL)
+                    .then(url => {
+                        // console.log(url)
+                        res.render("productDetail", { detail, formatRupiah, url })
+                    })
+
             }).catch((err) => {
                 console.log(err);
                 res.send(err)
