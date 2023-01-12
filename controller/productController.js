@@ -1,5 +1,7 @@
 const { Op } = require("sequelize")
 const { Product, User, Profile } = require("../models/index")
+const formatRupiah = require("../helper/formatRupiah")
+
 class ProductController {
 
     static findAllProduct(req, res) {
@@ -11,10 +13,10 @@ class ProductController {
             .then((dataProduct) => {
                 if (userId) {
                     User.findOne({ include: Profile, where: { id: userId } }).then((user) => {
-                        return res.render("product", { dataProduct, user })
+                        return res.render("product", { dataProduct, user , formatRupiah})
                     })
                 } else {
-                    return res.render("product", { dataProduct, user: {} })
+                    return res.render("product", { dataProduct, user: {} , formatRupiah})
                 }
             })
             .catch((err) => {
@@ -27,7 +29,7 @@ class ProductController {
         Product.findByPk(id)
             .then((detail) => {
                 // console.log(detail, ">>>");
-                res.render("productDetail", { detail })
+                res.render("productDetail", { detail , formatRupiah})
             }).catch((err) => {
                 console.log(err);
                 res.send(err)
