@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>insert your information below</h1>
+        <% if (errors) { %>
+            <% errors.split(';').forEach((perData)=>{%>
+                <p style="color: red;"><%= perData %></p>
+                <% }) %> 
+                <% } %>
+        <form action="/user/register" method="post">
+            <br>Username:
+            <br><input type="text" name="userName">
+            <br>Email:
+            <br><input type="text" name="email">
+            <br>Paswword:
+            <br><input type="password" name="password">
+            <br>Role:
+           <br><select name="role">
+                <option disabled selected>-select-</option>
+                <option value="Customer">Customer</option>
+                <option value="Seller">Seller</option>
+            </select>
+            <br><br><input type="submit" value="submit">
+            <a href="/products"><button type="button">cancel</button></a>
+        </form>
+    </center>
+</body>
+
+</html>
