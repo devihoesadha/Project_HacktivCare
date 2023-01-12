@@ -26,7 +26,7 @@ class userController {
     }
 
     static formRegister(req, res) {
-        console.log("hai");
+        // console.log("hai");
         const errors = req.query.errors
         res.render('formRegister.ejs', { errors })
     }
@@ -54,7 +54,8 @@ class userController {
     }
 
     static formLogin(req, res) {
-        res.render("formLogin.ejs")
+        const errors = req.query.error
+        res.render("formLogin.ejs", { errors })
     }
 
     static loginUser(req, res) {
@@ -80,7 +81,7 @@ class userController {
                     res.redirect("/user/login?error=emailsalah")
                 }
             }).catch((err) => {
-                console.log(err,"Post login");
+                console.log(err, "Post login");
                 res.send(err)
             });
     }
@@ -108,7 +109,7 @@ class userController {
 
     }
 
-    static logout(req,res){
+    static logout(req, res) {
         req.session.destroy()
         res.redirect('/')
 

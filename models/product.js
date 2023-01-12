@@ -31,10 +31,51 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product.init({
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Product Name cannot be Empty`
+        },
+        notEmpty: {
+          msg: `Product Name cannot be Empty`
+        }
+      }
+    },
     description: DataTypes.TEXT,
-    price: DataTypes.INTEGER,
-    stock: DataTypes.INTEGER,
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `price cannot be Empty`
+        },
+        notEmpty: {
+          msg: `price cannot be Empty`
+        },
+        min: {
+          args: 1,
+          msg: `price cannot be 0`
+        }
+      }
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `stock cannot be Empty`
+        },
+        notEmpty: {
+          msg: `stock cannot be Empty`
+        },
+        min: {
+          args: 1,
+          msg: `stock minimum`
+        }
+      }
+    },
     imageURL: DataTypes.TEXT
   }, {
     sequelize,
