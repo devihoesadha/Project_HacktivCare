@@ -3,6 +3,7 @@ const Controller = require('../controllers/controller')
 
 const route = express.Router()
 
-route.get("/", )//
+
+route.get("/", )
 
 module.exports = route
