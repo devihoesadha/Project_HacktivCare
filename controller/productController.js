@@ -1,10 +1,23 @@
-const { where } = require("sequelize");
+const { Op } = require("sequelize")
 const { Product } = require("../models/index")
-
 class ProductController {
 
     static findAllProduct(req, res) {
-        Product.findAll()
+        let searchProduct = req.query.search
+
+        let option = {
+            where: {},
+            order: [
+                ["createdAt", "DESC"]
+            ]
+        }
+        if (searchProduct) {
+            option.where.name = {
+                    [Op.iLike]: `%${searchProduct}%`
+            }
+        }
+
+        Product.findAll(option)
             .then((dataProduct) => {
                 // res.send(dataProduct)
                 res.render("product", { dataProduct })
@@ -73,7 +86,7 @@ class ProductController {
     static deleteProduct(req, res) {
         const id = req.params.id
         Product.destroy({
-            where:{
+            where: {
                 id
             }
         })
