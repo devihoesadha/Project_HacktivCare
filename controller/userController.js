@@ -1,3 +1,4 @@
+const { checkPassword } = require("../helper/bcrypt")
 const { User, Profile, Product, Cart } = require("../models/index")
 const user = require("../models/user")
 
@@ -25,6 +26,7 @@ class userController {
     }
 
     static formRegister(req, res) {
+        console.log("hai");
         const errors = req.query.errors
         res.render('formRegister.ejs', { errors })
     }
@@ -56,14 +58,30 @@ class userController {
     }
 
     static loginUser(req, res) {
+
+        // console.log(req.body)
         const { email, password } = req.body
 
-        User.findOne({ where: { email } })
-            .then((dataUser) => {
-                if(dataUser){
-                    const isValidPassword = 
+        User.findOne({
+            where: {
+                email
+            }
+        })
+            .then((data) => {
+                if (data) {
+                    let checkPswd = checkPassword(password, data.password)
+                    if (checkPswd) {
+                        req.session.UserId = data.id
+                        res.redirect("/user")
+                    } else {
+                        res.redirect('/user/login?error=passwordsalah')
+                    }
+                } else {
+                    res.redirect("/user/login?error=emailsalah")
                 }
-            })
+            }).catch((err) => {
+                res.send(err)
+            });
     }
 
     static formEditProfile(req, res) {
@@ -86,6 +104,13 @@ class userController {
             .catch((err) => {
                 res.send(err)
             })
+
+    }
+
+    static logout(req,res){
+        req.session.destroy()
+        res.redirect('/')
+
     }
 }
 

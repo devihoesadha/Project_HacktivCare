@@ -6,14 +6,18 @@ const PORT = 3000
 const route = require('./routes/index');
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({extended : false}))
+
+app.use(express.urlencoded({ extended: false }))
 app.use(session({
-    secret: 'ga ada',
+    secret: 'secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
-  }))
-  
+    // cookie: {
+    //     secure: false,
+    //     sameSite: false
+    // }
+}))
+
 app.use('/', route)
 
 

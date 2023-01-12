@@ -12,30 +12,19 @@
 
 <body>
   <center>
-    <h1>Product List</h1>
-    <% if (user?.role==="Admin" ) { %>
-      <a href="/user"><button>Addmin List</button></a>
-      <% } else { %>
-        <a href="/cart"><button>Cart List</button></a>
-        <% }%>
-          <form action="/products" method="get">
-            <br><input type="text" name="search">
-            <a href="/products"><button>search</button></a>
-          </form>
+    <h1>Cart</h1>
           <div class="container-fluid gap-5 d-flex flex-wrap mt-4">
-            <% dataProduct.forEach(el=> { %>
+            <% dataCart.forEach(el=> { %>
               <div class="mb-3">
                 <div class="card" style="width: 15rem;">
-                  <img class="card-img-top" src="<%= el.imageURL %>" alt="error picture" style=" max-height: 400px;">
+                  <img class="card-img-top" src="<%= el.Product.imageURL %>" alt="error picture" style=" max-height: 400px;">
                   <div class="card-body">
                     <h4 class="card-title">
-                      <%= el.name %>
+                      <%= el.Product.name %>
                     </h4>
                     <p class="card-text">
-                      <%= el.price %>
+                      <%= el.Product.price %>
                     </p>
-                    <a href="/products/detail/<%= el.id %>"><button> Show Details</button></a>
-                    <a href="#"><button> Add to Cart </button></a>
                   </div>
                 </div>
               </div>
