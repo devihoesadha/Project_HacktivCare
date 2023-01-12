@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div class="container-fluid">
+            <div class="container">
+                <br>
+                <h2 class="text-center mb-3"> Edit Product </h2>
+                <!-- Content here -->
+                <form method="post" action="/products/detail/<%= dataId.id %>/edit">
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <label class="form-label">Image Url</label>
+                            <input type="text" class="form-control" name="imageURL" value="<%= dataId.imageURL %>">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label">Product Name</label>
+                            <input type="string" class="form-control" name="name" value="<%= dataId.name %>">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <labe class="form-label">Price Product</label>
+                                <input type="number" class="form-control" name="price" value="<%= dataId.price %>">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <labe class="form-label">Add Description</label>
+                            <input type="text" class="form-control" name="description" value="<%= dataId.description%>">
+                    </div>
+
+                    <div class="mb-3">
+                        <labe class="form-label">Add Stock Product</label>
+                            <input type="number" class="form-control" name="stock" value="<%= dataId.stock %>">
+                    </div>
+
+                    <a href="/detail/<%= dataId.id %>"><input type="submit" value="submit" class="btn btn-primary"></a>
+                </form>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Product</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <br>
+            <img src="<%= detail.imageURL %>" width="300" height="300">
+            <!-- Content here -->
+                <h2 class="text-center mb-3"> <%= detail.name %></h2>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        Name Product :
+                        <label class="form-label"><%= detail.name %></label>
+                    </div>
+                    <div class="col-sm-6">
+                        Harga : 
+                        <labe class="form-label"><%= detail.price %></label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    Description :
+                    <labe class="form-label"><%= detail.description %></label>
+                </div>
+
+                <div class="mb-3">
+                    Stock Product :
+                    <labe class="form-label"><%= detail.stock %> </label>
+                </div>
+
+                <a href="#"><button type="submit" class="btn btn-primary">Add to Cart</button></a>
+                <a href="/products/detail/<%= detail.id %>/edit"><button type="submit" class="btn btn-light">Edit</button></a>
+                <a href="/products/delete/<%= detail.id %>"><button> Delete</button></a>
+        </div>
+    </div>
+</body>
+</html>
