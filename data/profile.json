@@ -1,0 +1,47 @@
+[
+    {
+        "username" : "deviFbrta",
+        "firstName" : "Devi",
+        "lastName" : "Febrita",
+        "dateOfBirth" : "2000-02-11",
+        "email" : "depifebrita@gmail.com",
+        "role" : "Customer",
+        "UserId" : 1
+    },
+    {
+        "username" : "dimasRmdh",
+        "firstName" : "Dimas",
+        "lastName" : "Nugroho",
+        "dateOfBirth" : "1998-08-20",
+        "email" : "dimasnugroho@gmail.com",
+        "role" : "Admin",
+        "UserId" : 2
+    },
+    {
+        "username" : "aditNuryana",
+        "firstName" : "Adit",
+        "lastName" : "Nuryana",
+        "dateOfBirth" : "1997-03-18",
+        "email" : "aditnuryana@gmail.com",
+        "role" : "Customer",
+        "UserId" : 3
+    },
+    {
+        "username" : "safrizalAji",
+        "firstName" : "Safrizal",
+        "lastName" : "Aji",
+        "dateOfBirth" : "1999-11-11",
+        "email" : "safrizalaji@gmail.com",
+        "role" : "Admin",
+        "UserId" : 4
+    },
+    {
+        "username" : "sonyFriady",
+        "firstName" : "Sony",
+        "lastName" : "Friady",
+        "dateOfBirth" : "1995-05-14",
+        "email" : "sonifriady@gmail.com",
+        "role" : "Customer",
+        "UserId" : 5
+    }
+]
