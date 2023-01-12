@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+
+<body>
+    <center>
+        <div class="container-fluid">
+            <div class="container">
+                <br>
+                <h2 class="text-center mb-3"> Add New Product </h2>
+                <!-- Content here -->
+                <form method="post" action="/products/add">
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <label class="form-label">Image Url</label>
+                            <input type="text" class="form-control" name="imageURL">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label">Product Name</label>
+                            <input type="string" class="form-control" name="name">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <labe class="form-label">Price Product</label>
+                                <input type="number" class="form-control" name="price">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <labe class="form-label">Add Description</label>
+                            <input type="text" class="form-control" name="description">
+                    </div>
+
+                    <div class="mb-3">
+                        <labe class="form-label">Add Stock Product</label>
+                            <input type="number" class="form-control" name="stock">
+                    </div>
+
+                    <input type="submit" value="submit" class="btn btn-primary">
+                    <a href="/products"><button type="button">Cancel</button></a>
+                </form>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
