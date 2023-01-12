@@ -1,13 +1,25 @@
 const cart = require('../models/cart')
-const { Profile, Cart, Profile } = require('../models/index')
+const { Cart, Profile } = require('../models/index')
 
 class cartController {
-    static addCart(req, res) {
+    static addToCart(req, res) {
         let productId = req.params.id
         let profileId = req.session.id
         Cart.create({ ProfileId: profileId, ProductId: productId })
             .then(() => {
                 res.redirect('/products')
+            })
+            .catch((err) => {
+                console.log(err)
+                res.send(err)
+            })
+    }
+
+    static cartForm(req, res) {
+        let profileId = req.session.id
+        Cart.findAll({ where: { ProfileId: profileId } })
+            .then((dataCart) => {
+                res.render('formCart.ejs', { dataCart })
             })
             .catch((err) => {
                 res.send(err)

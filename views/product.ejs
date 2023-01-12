@@ -16,8 +16,19 @@
 
   <center>
     <h1>Product List</h1>
+    <% if (user.role) {%>
+      <div>
+        <p><%= user.userName %></p>
+        <p class="title"><%= user.role %> </p>
+        <p>welcome to HackCare</p>
+          <a href="/profile/<%= user.id%>/edit"></a><button>Edit Profile</button></a>
+      </div>
+      <a href="/user/logout"><button>Logout</button></a>
+      <% }else{ %>
+        <a href="/user/login"><button>Login</button></a>
+        <%  } %>
     <% if (user?.role==="Admin" ) { %>
-      <a href="/user"><button>Addmin List</button></a>
+      <a href="/user"><button>User List</button></a>
       <% } else if(user?.role==="Customer" ) { %>
         <a href="/cart">
           <button style="position: left" class="btn btn-light position-relative" type="button"
@@ -52,7 +63,9 @@
                       <%=formatRupiah(el.price)%>
                     </p>
                     <a href="/products/detail/<%= el.id %>"><button> Show Details</button></a>
-                    <a href="#"><button> Add to Cart </button></a>
+                    <% if(user?.role==="Customer" ) { %>
+                    <a href="/cart/add/<%= el.id %>"><button> Add to Cart </button></a>
+                    <% } %>
                   </div>
                 </div>
               </div>
