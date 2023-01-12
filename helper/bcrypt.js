@@ -7,8 +7,7 @@ function hashPassword(password) {
 }
 
 function checkPassword(passwordUser, passwordDb) {
-    bcrypt.compareSync("B4c0/\/", hash);
-    bcrypt.compareSync("not_bacon", hash);
+   return bcrypt.compareSync(passwordUser, passwordDb);
 }
 
 module.exports = { hashPassword, checkPassword }

@@ -1,16 +1,23 @@
 const { Op } = require("sequelize")
-const { Product } = require("../models/index")
+const { Product, User, Profile } = require("../models/index")
 class ProductController {
 
     static findAllProduct(req, res) {
+        let userId = req.session.UserId
         let searchProduct = req.query.search
 
         Product.searchProductByTitle(searchProduct)
+            .then((product) => product)
             .then((dataProduct) => {
-                // res.send(dataProduct)
-                res.render("product", { dataProduct })
-            }).catch((err) => {
-                // console.log(err);
+                if (userId) {
+                    User.findOne({ include: Profile, where: { id: userId } }).then((user) => {
+                        return res.render("product", { dataProduct, user })
+                    })
+                } else {
+                    return res.render("product", { dataProduct, user: {} })
+                }
+            })
+            .catch((err) => {
                 res.send(err)
             });
     }
