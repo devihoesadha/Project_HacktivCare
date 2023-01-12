@@ -58,6 +58,7 @@ class userController {
     }
 
     static loginUser(req, res) {
+
         // console.log(req.body)
         const { email, password } = req.body
 
@@ -103,11 +104,13 @@ class userController {
             .catch((err) => {
                 res.send(err)
             })
+
     }
 
     static logout(req,res){
         req.session.destroy()
         res.redirect('/')
+
     }
 }
 
