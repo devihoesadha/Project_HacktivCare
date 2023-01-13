@@ -10,6 +10,6 @@ route.get("/add", middleWare, isSeller, Controller.addProductForm) // form untuk
 route.post("/add", middleWare, isSeller, Controller.addProductHandler) // post product yg baru ditambah dan di redirect ke (home/product)
 route.get("/detail/:id/edit", middleWare, isSeller, Controller.getEditProductById) // edit product
 route.post("/detail/:id/edit", middleWare, isSeller, Controller.postEditProduct) // post edit product
-route.get("/delete/:id", isSeller, middleWare, Controller.deleteProduct) //delete product
+route.get("/delete/:id", middleWare, isSeller, Controller.deleteProduct) //delete product
 
 module.exports = route
