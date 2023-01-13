@@ -73,6 +73,7 @@ class userController {
                     let checkPswd = checkPassword(password, data.password)
                     if (checkPswd) {
                         req.session.UserId = data.id
+                        req.session.role = data.role
                         res.redirect("/products")
                     } else {
                         res.redirect('/user/login?error=passwordsalah')
