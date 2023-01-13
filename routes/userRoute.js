@@ -13,7 +13,7 @@ route.post("/login", isLogin, userController.loginUser)//login user redirect ke 
 route.get('/logout', middleWare, userController.logout)
 route.get("/profile/:id/edit", middleWare, userController.formEditProfile)
 route.post("/profile/:id/edit", middleWare, userController.editProfile)
-route.get("/profile/:id", middleWare, userController.profileUsers)//menampilkan user/profile profile user
+route.get("/profile/:id", middleWare, isAdmin, userController.profileUsers)//menampilkan user/profile profile user
 
 
 module.exports = route

@@ -54,7 +54,7 @@ class userController {
     }
 
     static formLogin(req, res) {
-        const errors = req.query.error
+        const errors = req.query.errors
         res.render("formLogin.ejs", { errors })
     }
 
@@ -76,10 +76,10 @@ class userController {
                         req.session.role = data.role
                         res.redirect("/products")
                     } else {
-                        res.redirect('/user/login?error=passwordsalah')
+                        res.redirect('/user/login?errors=passwordsalah')
                     }
                 } else {
-                    res.redirect("/user/login?error=emailsalah")
+                    res.redirect("/user/login?errors=emailsalah")
                 }
             }).catch((err) => {
                 console.log(err, "Post login");
