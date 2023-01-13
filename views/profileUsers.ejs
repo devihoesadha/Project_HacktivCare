@@ -24,7 +24,11 @@
                     <td><%= perData.UserId %> </td>
                     <td><%= perData.firstName %> </td>
                     <td><%= perData.lastName %> </td>
-                    <td><%= perData.age %></td>
+                    <% if (perData.dateOfBirth) { %>
+                        <td><%= perData.age %></td>
+                    <% }else{ %>
+                        <td><%= perData.dateOfBirth %></td>
+                    <% } %>
                     <td><%= perData.User.role %></td>
                 </tr>
                 <% }) %>
