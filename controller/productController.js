@@ -8,16 +8,17 @@ class ProductController {
     static findAllProduct(req, res) {
         let userId = req.session.UserId
         let searchProduct = req.query.search
+        const errors = req.query.errors
 
         Product.searchProductByTitle(searchProduct)
             .then((product) => product)
             .then((dataProduct) => {
                 if (userId) {
                     User.findOne({ include: Profile, where: { id: userId } }).then((user) => {
-                        return res.render("product", { dataProduct, user, formatRupiah })
+                        return res.render("product", { dataProduct, user, formatRupiah, errors })
                     })
                 } else {
-                    return res.render("product", { dataProduct, user: {}, formatRupiah })
+                    return res.render("product", { dataProduct, user: {}, formatRupiah, errors })
                 }
             })
             .catch((err) => {
